@@ -5,27 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apex Ski - Bariloche</title>
     <style>
+      :root {
+        /* Define your color variables here */
+        --primary-color: #ff99cc; /* Option 1: Soft Flamingo Pink */
+        /* --primary-color: #f7a2b9; */ /* Option 2: Dusty Rose/Muted Pink */
+        /* --primary-color: #e6a7c7; */ /* Option 3: Lavender-Pink */
+        /* --primary-color: #f5b3cc; */ /* Option 4: Light Muted Pink */
+        /* --primary-color: #ec9fad; */ /* Option 5: Peach-Pink */
+
+        --secondary-color: #25d366; /* WhatsApp Green */
+        --dark-bg-color: #d3d3d3; /* Light grey for body background */
+        --darker-bg-color: #262626; /* Darker grey for container background */
+        --darkest-bg-color: #1a1a1a; /* Even darker for contact section */
+        --card-bg-color: #333; /* Dark card background */
+        --light-text-color: #f8f8f8; /* Light text */
+        --dark-border-color: #404040; /* Darker border for cards */
+        --black-color: #000; /* Pure black for footer and hover */
+        --hero-overlay-color: rgba(0, 0, 0, 0.7); /* Dark overlay for hero */
+      }
+
       body {
         font-family: sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #d3d3d3; /* Dark background */
-        color: #f8f8f8; /* Light text */
+        background-color: var(--dark-bg-color); /* Using variable */
+        color: var(--light-text-color); /* Using variable */
         line-height: 1.6;
       }
       .hero {
         background:
-          linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-          url("https://www.shutterstock.com/image-photo/bariloche-argentina-lansdcape-mountains-snow-600nw-1397797205.jpg"); /* Replace with your image URL */
+          linear-gradient(var(--hero-overlay-color), var(--hero-overlay-color)), /* Using variable */
+          url('./img/WhatsApp Image 2025-05-26 at 14.31.19.jpeg');
         background-size: cover;
-        color: #fff;
+        background-position: center;
+        color: var(--light-text-color); /* Using variable */
         text-align: center;
-        padding: 150px 0;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
       }
       .hero h1 {
         font-size: 3.5em;
         margin-bottom: 20px;
-        color: #ff69b4; /* Pink heading */
+        color: var(--primary-color); /* Using variable */
       }
       .hero p {
         font-size: 1.2em;
@@ -34,34 +59,34 @@
       .hero-button {
         display: inline-block;
         padding: 15px 30px;
-        background-color: #ff69b4; /* Pink button */
-        color: #fff;
+        background-color: var(--primary-color); /* Using variable */
+        color: var(--light-text-color); /* Using variable */
         text-decoration: none;
         border-radius: 5px;
         font-weight: bold;
         font-size: 1.1em;
         margin: 0 10px;
-        border: 2px solid #ff69b4; /* Pink border */
+        border: 2px solid var(--primary-color); /* Using variable */
       }
       .hero-button.whatsapp {
-        background-color: #25d366; /* WhatsApp Green remains */
-        border-color: #25d366;
+        background-color: var(--secondary-color); /* Using variable */
+        border-color: var(--secondary-color); /* Using variable */
       }
       .hero-button:hover {
-        background-color: #000; /* Darker hover */
-        color: #ff69b4;
+        background-color: var(--black-color); /* Using variable */
+        color: var(--primary-color); /* Using variable */
       }
       .container {
         max-width: 1200px;
         margin: 40px auto;
         padding: 20px;
-        background-color: #262626; /* Darker container */
+        background-color: var(--darker-bg-color); /* Using variable */
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       }
       .section-title {
         font-size: 2.5em;
-        color: #ff69b4; /* Pink section title */
+        color: var(--primary-color); /* Using variable */
         text-align: center;
         margin-bottom: 30px;
       }
@@ -73,43 +98,43 @@
       }
       .service-card {
         padding: 20px;
-        border: 1px solid #404040; /* Darker border */
+        border: 1px solid var(--dark-border-color); /* Using variable */
         border-radius: 5px;
         text-align: center;
-        background-color: #333; /* Dark card background */
+        background-color: var(--card-bg-color); /* Using variable */
       }
       .service-card h3 {
-        color: #ff69b4; /* Pink service title */
+        color: var(--primary-color); /* Using variable */
         margin-bottom: 10px;
       }
       .contact-section {
         text-align: center;
         padding: 40px 0;
-        background-color: #1a1a1a; /* Dark contact background */
+        background-color: var(--darkest-bg-color); /* Using variable */
       }
       .contact-button {
         display: inline-block;
         padding: 15px 30px;
-        background-color: #ff69b4; /* Pink contact button */
-        color: #fff;
+        background-color: var(--primary-color); /* Using variable */
+        color: var(--light-text-color); /* Using variable */
         text-decoration: none;
         border-radius: 5px;
         font-weight: bold;
         font-size: 1.1em;
-        border: 2px solid #ff69b4;
+        border: 2px solid var(--primary-color); /* Using variable */
       }
       .contact-button:hover {
-        background-color: #000;
-        color: #ff69b4;
+        background-color: var(--black-color); /* Using variable */
+        color: var(--primary-color); /* Using variable */
       }
       footer {
-        background-color: #000;
-        color: #f8f8f8;
+        background-color: var(--black-color); /* Using variable */
+        color: var(--light-text-color); /* Using variable */
         text-align: center;
         padding: 20px;
       }
       footer a {
-        color: #ff69b4;
+        color: var(--primary-color); /* Using variable */
         text-decoration: none;
       }
       footer a:hover {
@@ -126,15 +151,16 @@
   </head>
   <body>
     <div class="hero">
-      <h1>Apex Ski</h1>
-      <p>Experience Bariloche's finest Ski School</p>
-      <a href="#lessons" class="hero-button">Explore Lessons</a>
-      <a
-        href="https://wa.me/[Your WhatsApp Phone Number]?text=Hi! I'm interested in learning more about Apex Ski."
-        class="hero-button whatsapp"
-        target="_blank"
-        >Contact us on WhatsApp</a
-      >
+      <div>
+        <h1>Apex Ski</h1>
+        <p>Experience Bariloche's finest Ski School</p>
+        <a
+          href="https://wa.me/[Your WhatsApp Phone Number]?text=Hi! I'm interested in learning more about Apex Ski."
+          class="hero-button"
+          target="_blank"
+          >Contact us on WhatsApp</a
+        >
+      </div>
     </div>
 
     <div class="container">
@@ -159,11 +185,11 @@
       </div>
 
       <h2 class="section-title">Why Choose Apex Ski?</h2>
-      <p>
+      <div class="service-card">
         We are happy to offer you an exclusive and high-quality service to help
         you create an unforgettable experience, thanks to our internationally
         experienced instructors.
-      </p>
+      </div>
     </div>
 
     <div class="contact-section">
@@ -179,7 +205,8 @@
     <footer>
       <div style="text-align: center; padding: 20px">
         &copy; 2025 Apex Ski - Bariloche, Argentina | Designed with
-        <span style="color: #ff69b4">passion</span>
+        <span style="color: var(--primary-color)">passion</span> |
+        <a href="./docs/Info importante- políticas de cancelación y reservas.pdf" style="color: var(--primary-color); text-decoration: none;">Reservation & Cancellation Policies</a>
       </div>
     </footer>
   </body>
