@@ -44,21 +44,40 @@
       }
       .hero-content { /* New class for the text container */
         position: absolute;
-        bottom: 5vh; /* Position from the bottom, responsive */
+        bottom: 0; /* Default: Position at the very bottom */
         left: 50%;
         transform: translateX(-50%); /* Centering horizontally */
         width: 90%; /* Adjust width for mobile responsiveness */
         max-width: 800px; /* Max width for larger screens */
         text-align: center; /* Center text within this container */
+        padding-bottom: 20px; /* Added padding to ensure content is above the very bottom edge */
       }
+
+      /* Media query for laptops and wider screens (e.g., 16:9 displays) */
+      @media (min-width: 992px) {
+        .hero-content {
+          bottom: auto; /* Remove bottom positioning */
+          top: 50vh; /* Position from the top, pushing it into the dark area */
+          /* To ensure centering, remove absolute positioning and use flexbox */
+          position: relative; /* Change to relative for flexbox to work on parent */
+          left: auto;
+          transform: none;
+          display: flex; /* Use flexbox on parent */
+          flex-direction: column; /* Stack children vertically */
+          align-items: center; /* Center horizontally */
+          justify-content: flex-start; /* Align content to the start of the flex container */
+          margin: 0 auto; /* Ensures the flex container itself is centered */
+        }
+      }
+
       .hero h1 {
         font-size: 3.5em;
-        margin-bottom: 20px;
+        margin-bottom: 0px;
         color: var(--primary-color);
       }
       .hero p {
         font-size: 1.2em;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
       }
       .hero-button {
         display: inline-block;
@@ -155,8 +174,9 @@
   </head>
   <body>
     <div class="hero">
-      <div class="hero-content"> <h1>Apex Ski</h1>
-        <p>Experience Bariloche's finest Ski School</p>
+      <div class="hero-content">
+        <h1>Apex Ski</h1>
+        <p>Mountain life experience</p>
         <a
           href="https://wa.me/[Your WhatsApp Phone Number]?text=Hi! I'm interested in learning more about Apex Ski."
           class="hero-button"
@@ -207,8 +227,12 @@
 
     <footer>
       <div style="text-align: center; padding: 20px">
-        &copy; 2025 Apex Ski - Bariloche, Argentina | 
-        <a href="/docs/Info importante- políticas de cancelación y reservas.pdf" style="color: var(--primary-color); text-decoration: none;">Reservation & Cancellation Policies</a>
+        &copy; 2025 Apex Ski - Bariloche, Argentina |
+        <a
+          href="/docs/Info importante- políticas de cancelación y reservas.pdf" 
+          style="color: var(--primary-color); text-decoration: none;"
+          target="_blank"
+        >Reservation & Cancellation Policies</a>
       </div>
     </footer>
   </body>
