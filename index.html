@@ -14,7 +14,7 @@
         /* --primary-color: #ec9fad; */ /* Option 5: Peach-Pink */
 
         --secondary-color: #25d366; /* WhatsApp Green */
-        --dark-bg-color: #d3d3d3; /* Light grey for body background */
+        --dark-bg-color: #000; /* Changed to pure black for unified background */
         --darker-bg-color: #262626; /* Darker grey for container background */
         --darkest-bg-color: #1a1a1a; /* Even darker for contact section */
         --card-bg-color: #333; /* Dark card background */
@@ -28,29 +28,33 @@
         font-family: sans-serif;
         margin: 0;
         padding: 0;
-        background-color: var(--dark-bg-color); /* Using variable */
+        background-color: var(--dark-bg-color); /* Now using black for body background */
         color: var(--light-text-color); /* Using variable */
         line-height: 1.6;
       }
       .hero {
         background:
-          linear-gradient(var(--hero-overlay-color), var(--hero-overlay-color)), /* Using variable */
+          linear-gradient(var(--hero-overlay-color), var(--hero-overlay-color)),
           url('./img/WhatsApp Image 2025-05-26 at 14.31.19.jpeg');
         background-size: cover;
-        background-position: center;
-        color: var(--light-text-color); /* Using variable */
-        text-align: center;
+        background-position: center bottom; /* Aligns image bottom with container bottom */
+        color: var(--light-text-color);
         height: 100vh;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        position: relative; /* Needed for absolute positioning of child */
+      }
+      .hero-content { /* New class for the text container */
+        position: absolute;
+        bottom: 5vh; /* Position from the bottom, responsive */
+        left: 50%;
+        transform: translateX(-50%); /* Centering horizontally */
+        width: 90%; /* Adjust width for mobile responsiveness */
+        max-width: 800px; /* Max width for larger screens */
+        text-align: center; /* Center text within this container */
       }
       .hero h1 {
         font-size: 3.5em;
         margin-bottom: 20px;
-        color: var(--primary-color); /* Using variable */
+        color: var(--primary-color);
       }
       .hero p {
         font-size: 1.2em;
@@ -59,34 +63,34 @@
       .hero-button {
         display: inline-block;
         padding: 15px 30px;
-        background-color: var(--primary-color); /* Using variable */
-        color: var(--light-text-color); /* Using variable */
+        background-color: var(--primary-color);
+        color: var(--light-text-color);
         text-decoration: none;
         border-radius: 5px;
         font-weight: bold;
         font-size: 1.1em;
         margin: 0 10px;
-        border: 2px solid var(--primary-color); /* Using variable */
+        border: 2px solid var(--primary-color);
       }
       .hero-button.whatsapp {
-        background-color: var(--secondary-color); /* Using variable */
-        border-color: var(--secondary-color); /* Using variable */
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
       }
       .hero-button:hover {
-        background-color: var(--black-color); /* Using variable */
-        color: var(--primary-color); /* Using variable */
+        background-color: var(--black-color);
+        color: var(--primary-color);
       }
       .container {
         max-width: 1200px;
         margin: 40px auto;
         padding: 20px;
-        background-color: var(--darker-bg-color); /* Using variable */
+        background-color: var(--darker-bg-color);
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       }
       .section-title {
         font-size: 2.5em;
-        color: var(--primary-color); /* Using variable */
+        color: var(--primary-color);
         text-align: center;
         margin-bottom: 30px;
       }
@@ -98,43 +102,43 @@
       }
       .service-card {
         padding: 20px;
-        border: 1px solid var(--dark-border-color); /* Using variable */
+        border: 1px solid var(--dark-border-color);
         border-radius: 5px;
         text-align: center;
-        background-color: var(--card-bg-color); /* Using variable */
+        background-color: var(--card-bg-color);
       }
       .service-card h3 {
-        color: var(--primary-color); /* Using variable */
+        color: var(--primary-color);
         margin-bottom: 10px;
       }
       .contact-section {
         text-align: center;
         padding: 40px 0;
-        background-color: var(--darkest-bg-color); /* Using variable */
+        background-color: var(--darkest-bg-color);
       }
       .contact-button {
         display: inline-block;
         padding: 15px 30px;
-        background-color: var(--primary-color); /* Using variable */
-        color: var(--light-text-color); /* Using variable */
+        background-color: var(--primary-color);
+        color: var(--light-text-color);
         text-decoration: none;
         border-radius: 5px;
         font-weight: bold;
         font-size: 1.1em;
-        border: 2px solid var(--primary-color); /* Using variable */
+        border: 2px solid var(--primary-color);
       }
       .contact-button:hover {
-        background-color: var(--black-color); /* Using variable */
-        color: var(--primary-color); /* Using variable */
+        background-color: var(--black-color);
+        color: var(--primary-color);
       }
       footer {
-        background-color: var(--black-color); /* Using variable */
-        color: var(--light-text-color); /* Using variable */
+        background-color: var(--black-color);
+        color: var(--light-text-color);
         text-align: center;
         padding: 20px;
       }
       footer a {
-        color: var(--primary-color); /* Using variable */
+        color: var(--primary-color);
         text-decoration: none;
       }
       footer a:hover {
@@ -151,8 +155,7 @@
   </head>
   <body>
     <div class="hero">
-      <div>
-        <h1>Apex Ski</h1>
+      <div class="hero-content"> <h1>Apex Ski</h1>
         <p>Experience Bariloche's finest Ski School</p>
         <a
           href="https://wa.me/[Your WhatsApp Phone Number]?text=Hi! I'm interested in learning more about Apex Ski."
@@ -204,9 +207,8 @@
 
     <footer>
       <div style="text-align: center; padding: 20px">
-        &copy; 2025 Apex Ski - Bariloche, Argentina | Designed with
-        <span style="color: var(--primary-color)">passion</span> |
-        <a href="./docs/Info importante- políticas de cancelación y reservas.pdf" style="color: var(--primary-color); text-decoration: none;">Reservation & Cancellation Policies</a>
+        &copy; 2025 Apex Ski - Bariloche, Argentina | 
+        <a href="/docs/Info importante- políticas de cancelación y reservas.pdf" style="color: var(--primary-color); text-decoration: none;">Reservation & Cancellation Policies</a>
       </div>
     </footer>
   </body>
