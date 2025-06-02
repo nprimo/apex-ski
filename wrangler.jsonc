@@ -1,6 +1,6 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "my-first-worker",
+	"name": "apex-ski",
 	"compatibility_date": "2025-06-01",
 	"assets": {
 		"directory": "./public"
