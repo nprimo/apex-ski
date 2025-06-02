@@ -1,0 +1,164 @@
+:root {
+  /* Define your color variables here */
+  --primary-color: #e98cb9; /* Same as logo */
+
+  --dark-bg-color: #000; /* Changed to pure black for unified background */
+  --darker-bg-color: #262626; /* Darker grey for container background */
+  --darkest-bg-color: #1a1a1a; /* Even darker for contact section */
+  --card-bg-color: #333; /* Dark card background */
+  --light-text-color: #f8f8f8; /* Light text */
+  --dark-border-color: #404040; /* Darker border for cards */
+  --black-color: #000; /* Pure black for footer and hover */
+  --hero-overlay-color: rgba(0, 0, 0, 0.7); /* Dark overlay for hero */
+}
+
+body {
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  background-color: var(
+    --dark-bg-color
+  ); /* Now using black for body background */
+  color: var(--light-text-color); /* Using variable */
+  line-height: 1.6;
+}
+.hero {
+  background: url("./img/hero-img.jpeg");
+  background-size: cover;
+  background-position: center bottom; /* Aligns image bottom with container bottom */
+  color: var(--light-text-color);
+  height: 100vh;
+  position: relative; /* Needed for absolute positioning of child */
+}
+.hero-content {
+  /* New class for the text container */
+  position: absolute;
+  bottom: 0; /* Default: Position at the very bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Centering horizontally */
+  width: 90%; /* Adjust width for mobile responsiveness */
+  max-width: 800px; /* Max width for larger screens */
+  text-align: center; /* Center text within this container */
+  padding-bottom: 20px; /* Added padding to ensure content is above the very bottom edge */
+}
+
+/* Media query for laptops and wider screens (e.g., 16:9 displays) */
+@media (min-width: 992px) {
+  .hero-content {
+    bottom: auto; /* Remove bottom positioning */
+    top: 50vh; /* Position from the top, pushing it into the dark area */
+    /* To ensure centering, remove absolute positioning and use flexbox */
+    position: relative; /* Change to relative for flexbox to work on parent */
+    left: auto;
+    transform: none;
+    display: flex; /* Use flexbox on parent */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: flex-start; /* Align content to the start of the flex container */
+    margin: 0 auto; /* Ensures the flex container itself is centered */
+  }
+}
+
+.hero h1 {
+  font-size: 3.5em;
+  margin-bottom: 0px;
+  color: var(--primary-color);
+}
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.hero-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 0 10px;
+  border: 2px solid var(--primary-color);
+}
+.hero-button.whatsapp {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+.hero-button:hover {
+  background-color: var(--black-color);
+  color: var(--primary-color);
+}
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: var(--darker-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.section-title {
+  font-size: 2.5em;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+.service-card {
+  padding: 20px;
+  border: 1px solid var(--dark-border-color);
+  border-radius: 5px;
+  text-align: center;
+  background-color: var(--card-bg-color);
+}
+.service-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+.contact-section {
+  text-align: center;
+  padding: 40px 0;
+  background-color: var(--darkest-bg-color);
+}
+.contact-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.1em;
+  border: 2px solid var(--primary-color);
+}
+.contact-button:hover {
+  background-color: var(--black-color);
+  color: var(--primary-color);
+}
+footer {
+  background-color: var(--black-color);
+  color: var(--light-text-color);
+  text-align: center;
+  padding: 20px;
+}
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+li {
+  margin-bottom: 8px;
+}
