@@ -143,6 +143,24 @@ body {
   background-color: var(--black-color);
   color: var(--primary-color);
 }
+.whatsapp-fixed {
+    position: fixed;
+    bottom: 20px; /* Adjust as needed for vertical position from bottom */
+    right: 20px;  /* Adjust as needed for horizontal position from right */
+    z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+.whatsapp-logo {
+    width: 60px;  /* Adjust the size of your WhatsApp logo */
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow */
+    transition: transform 0.2s ease-in-out; /* Optional: adds a subtle hover effect */
+}
+
+.whatsapp-logo:hover {
+    transform: scale(1.1); /* Optional: makes the logo slightly larger on hover */
+}
+
 footer {
   background-color: var(--black-color);
   color: var(--light-text-color);
