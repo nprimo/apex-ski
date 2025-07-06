@@ -11,54 +11,79 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apex Ski - Bariloche</title>
+    <style>
+      /* Simple styling for the language switcher */
+      .lang-switcher {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 5px 10px;
+        border-radius: 8px;
+      }
+      .lang-switcher a {
+        color: white;
+        text-decoration: none;
+        padding: 5px;
+        font-weight: bold;
+      }
+      .lang-switcher a.active {
+        text-decoration: underline;
+        color: var(--primary-color);
+      }
+    </style>
   </head>
   <body>
+    <div class="lang-switcher">
+      <a href="#" id="lang-en">EN</a>
+      <a href="#" id="lang-es">ES</a>
+      <a href="#" id="lang-pt">PT</a>
+    </div>
+
     <div class="hero"></div>
+
     <a
       href="https://wa.me/5492944804851?text=Hi! I'm interested in learning more about Apex Ski."
       class="whatsapp-fixed"
       target="_blank"
     >
-      <img src="./img/whatsapp_logo_green.png" alt="WhatsApp Chat" class="whatsapp-logo" />
+      <img
+        src="./img/whatsapp_logo_green.png"
+        alt="WhatsApp Chat"
+        class="whatsapp-logo"
+      />
     </a>
 
     <div class="container">
-      <h2 class="section-title" id="lessons">Ski & Snowboard Experiences</h2>
+      <h2 class="section-title" id="lessons" data-key="lessonsTitle"></h2>
       <div class="services-grid">
         <div class="service-card">
-          <h3>Full day</h3>
-          <p>
-            Make the most of your ski day. You'll have an instructor
-            accompanying you from when you put your boots on until you take them
-            off.
-          </p>
+          <h3 data-key="fullDayTitle"></h3>
+          <p data-key="fullDayText"></p>
         </div>
         <div class="service-card">
-          <h3>Mini Day</h3>
-          <p>Make the most of your time until lunchtime, class until 2 PM.</p>
+          <h3 data-key="miniDayTitle">Mini Day</h3>
+          <p data-key="miniDayText"></p>
         </div>
         <div class="service-card">
-          <h3>Half Day</h3>
-          <p>Instructor available until 12:30 PM or starting from 1:00 PM.</p>
+          <h3 data-key="halfDayTitle">Half Day</h3>
+          <p data-key="halfDayText"></p>
         </div>
       </div>
 
-      <h2 class="section-title">Why Choose Apex?</h2>
-      <div class="service-card">
-        We are happy to offer you an exclusive and high-quality service to help
-        you create an unforgettable experience, thanks to our internationally
-        experienced instructors.
-      </div>
+      <h2 class="section-title" data-key="whyChooseTitle">Why Choose Apex?</h2>
+      <div class="service-card" data-key="whyChooseText"></div>
     </div>
 
     <div class="contact-section">
-      <h2>Ready to ski with us?</h2>
+      <h2 data-key="readyToSkiTitle">Ready to ski with us?</h2>
       <a
         href="https://wa.me/5492944804851?text=Hi! I'm interested in learning more about Apex Ski."
         class="contact-button"
         target="_blank"
-        >Contact us on WhatsApp</a
-      >
+        data-key="contactButton"
+      ></a>
     </div>
 
     <footer>
@@ -68,7 +93,8 @@
           href="/docs/Info importante- políticas de cancelación y reservas.pdf"
           style="color: var(--primary-color); text-decoration: none"
           target="_blank"
-          >Reservation & Cancellation Policies</a
+          data-key="policiesLink"
+          ></a
         >
         |
         <a
@@ -83,5 +109,6 @@
         >
       </div>
     </footer>
+    <script src="./i18n.js"></script>
   </body>
 </html>
